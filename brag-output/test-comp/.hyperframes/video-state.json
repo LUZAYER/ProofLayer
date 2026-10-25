@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "historyId": "c7dbe6af-45cd-4085-a257-7be0b811e801",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "CLAUDE.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "f647f277b2a0acb4998a7f79a757efbc20f620e4fc95407bd99ee36732764a62",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/f6/f647f277b2a0acb4998a7f79a757efbc20f620e4fc95407bd99ee36732764a62"
+    },
+    "meta.json": {
+      "hash": "7f6e4c15d9d791be5475589e84e8238c4a5c78a603c797a4e4e157fdfad10416",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/7f/7f6e4c15d9d791be5475589e84e8238c4a5c78a603c797a4e4e157fdfad10416"
+    },
+    "package.json": {
+      "hash": "68d0317eb3da5b0fd8d754533373c60ce044f88de8dc2d2b11f669ca20a2abe2",
+      "content": "/home/luzayer/.cache/hyperframes/history/c7dbe6af-45cd-4085-a257-7be0b811e801/blobs/68/68d0317eb3da5b0fd8d754533373c60ce044f88de8dc2d2b11f669ca20a2abe2"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "ee0622a5-a28b-4182-8c48-6b7ec39f46db"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "ee0622a5-a28b-4182-8c48-6b7ec39f46db",
+        "scope": "project",
+        "report": "/home/luzayer/AI/Cl/brag-output/test-comp/.hyperframes/artifacts/checks/ee0622a5-a28b-4182-8c48-6b7ec39f46db.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792955063255,
+        "contentHash": "f68a7d18068f7055fc03b3578f1f23b566100173cc4ef2927ed6c67f2715d491",
+        "revision": null,
+        "inputFingerprint": "37612ff1f4f3a6829c356695580b4968252893ef8a38dab3a88f851ce849dac6",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  }
+}
