@@ -64,15 +64,45 @@ class AuditLedger:
         db_path: Path | str | None = None,
     ) -> None:
         self.key_id = key_id
+        self.db_path = Path(db_path) if db_path else None
+
+        key_file = self.db_path.parent / "ed25519_key.pem" if self.db_path else None
         if private_key is not None:
             self._private_key = private_key
+        elif key_file and key_file.exists():
+            pem_bytes = key_file.read_bytes()
+            self._private_key = serialization.load_pem_private_key(pem_bytes, password=None)
         else:
             self._private_key = ed25519.Ed25519PrivateKey.generate()
-        self._public_key = self._private_key.public_key()
+            if key_file:
+                key_file.parent.mkdir(parents=True, exist_ok=True)
+                pem_bytes = self._private_key.private_bytes(
+                    encoding=serialization.Encoding.PEM,
+                    format=serialization.PrivateFormat.PKCS8,
+                    encryption_algorithm=serialization.NoEncryption(),
+                )
+                key_file.write_bytes(pem_bytes)
 
+        self._public_key = self._private_key.public_key()
         self.pii_scanner = PIIScanner(redaction_mode="mask")
         self.events: list[AuditEvent] = []
-        self.db_path = Path(db_path) if db_path else None
+
+        if self.db_path and self.db_path.exists():
+            self._load_from_db()
+
+    def _load_from_db(self) -> None:
+        """Load persistent events from jsonl file."""
+        if not self.db_path or not self.db_path.exists():
+            return
+        with open(self.db_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    try:
+                        data = json.loads(line)
+                        self.events.append(AuditEvent(**data))
+                    except Exception:
+                        pass
 
     @property
     def public_key_hex(self) -> str:
@@ -157,6 +187,10 @@ class AuditLedger:
         )
 
         self.events.append(event)
+        if self.db_path:
+            self.db_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.db_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(event.to_dict(), ensure_ascii=False) + "\n")
         return event
 
     def _sanitize_evidence(self, data: Any) -> Any:

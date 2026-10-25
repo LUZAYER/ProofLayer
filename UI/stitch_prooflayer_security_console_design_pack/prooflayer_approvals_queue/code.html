@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20;display:inline-block;vertical-align:middle;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary":"#adc6ff","surface-bright":"#34394a","surface-dim":"#0e1323","error-container":"#93000a","primary-fixed":"#62fae3","outline":"#859490","on-secondary-fixed-variant":"#004395","on-tertiary":"#003824","on-primary-fixed-variant":"#005047","secondary-container":"#0566d9","on-error-container":"#ffdad6","surface-variant":"#2f3446","primary-fixed-dim":"#3cddc7","surface-container-low":"#161b2b","primary":"#57f1db","surface-tint":"#3cddc7","surface-container-lowest":"#080d1d","secondary-fixed-dim":"#adc6ff","surface-container-highest":"#2f3446","on-background":"#dee1f9","error":"#ffb4ab","inverse-primary":"#006b5f","secondary-fixed":"#d8e2ff","on-tertiary-fixed-variant":"#005236","on-surface":"#dee1f9","background":"#0e1323","tertiary-fixed-dim":"#4edea3","surface-container":"#1a1f30","primary-container":"#2dd4bf","on-surface-variant":"#bacac5","outline-variant":"#3c4a46","tertiary":"#66f3b6","on-secondary-fixed":"#001a42","on-primary-fixed":"#00201c","on-error":"#690005","on-primary":"#003731","on-secondary-container":"#e6ecff","tertiary-fixed":"#6ffbbe","surface":"#0e1323","on-secondary":"#002e6a","tertiary-container":"#44d69b","on-tertiary-fixed":"#002113","surface-container-high":"#25293a","inverse-on-surface":"#2b3041","on-primary-container":"#00574d","on-tertiary-container":"#00593b","inverse-surface":"#dee1f9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-md":"1rem","space-xl":"2rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-desktop":"1.5rem","gutter-desktop":"1.5rem","margin":"1rem","space-xs":"0.25rem"},"fontFamily":{"code-sm":["JetBrains Mono"],"body-md":["Inter"],"code-md":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"]},"fontSize":{"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.06em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"headline-lg-mobile":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-sm":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"600"}],"headline-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col h-full"><div class="h-14 px-space-md flex items-center justify-between bg-surface-container-lowest/50"><div class="flex items-center gap-space-sm"><img alt="ProofLayer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UpbSauNvlA1-G8b753QujbY43zr-K25kgk56IBxFj37rr9gUBcz-ElixFkIPDwCIrPXWKJPfQQV5h42eAWNusu_tn5ZUcVWSzShv6_6_hJgB2DGqbWGlZp5quKHGIecAQALAhOqy_BMkYGTct0fO2UR5JTs7vQ076i7bHIkNnV5JoTr5Qst0nMe5ynTbip2EdpbQcO0GKiufVi2DwehEDYIbslFhZjpDtGIzEz4hoYnQ"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ProofLayer</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-primary-fixed">v1.4 Ent</span></div><nav class="flex-1 px-space-sm py-space-sm space-y-0.5 overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-headline-sm"><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Overview</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">একনজরে / Overview</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="live-traffic" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Live Traffic</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">লাইভ ট্রাফিক</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Incidents</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">ঘটনা ও ঝুঁকি</span></div></a><a aria-current="page" class="group flex items-center justify-between px-space-sm py-2 rounded-lg transition-colors bg-surface-container-high text-primary font-headline-sm" data-path="approvals" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Approvals</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">অনুমোদন</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">3</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="policies" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Policies</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">পলিসি</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="red-team" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Red Team</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">রেড টিম</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="proof-and-audit" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Proof &amp; Audit</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">প্রমাণ ও অডিট</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="playground" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Playground</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">প্লেগ্রাউন্ড</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sandbox" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Sandbox</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">স্যান্ডবক্স</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Settings</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">সেটিংস</span></div></a></nav></div><div class="p-space-sm m-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span></span><div class="min-w-0 flex-1"><span class="font-headline-sm text-headline-sm block text-on-surface leading-tight truncate">12/12 Agents Healthy</span><span class="font-code-sm text-code-sm text-outline block leading-tight truncate">Continuous Telemetry</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center flex-1 max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-12 py-1.5 bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search agents, incidents, hash, audit logs..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">⌘K</div></div></div><div class="flex items-center gap-space-md ml-space-lg"><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container"><span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps text-label-caps text-on-surface">Shield: ACTIVE / ON</span><button aria-label="Toggle Shield Status" class="w-7 h-4 bg-primary-container rounded-full relative transition-colors" type="button"><span class="absolute right-0.5 top-0.5 w-3 h-3 rounded-full bg-on-primary-container transition-transform"></span></button></div><div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-tertiary"><span class="material-symbols-outlined text-[16px]">verified</span><span class="font-label-caps text-label-caps text-on-surface">Chain: Verified · 48,213 events</span></div><div class="flex items-center bg-surface-container rounded-full p-0.5 font-label-caps text-label-caps"><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-semibold">EN</span><span class="px-2 py-0.5 rounded-full text-outline hover:text-on-surface cursor-pointer">বাংলা</span></div><button aria-label="Toggle Light/Dark Theme" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="relative w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden 2xl:block"><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">T. Rahman (Lead SecOps)</span><span class="font-code-sm text-code-sm text-outline block leading-tight">BankDesk ID: 9481</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-caps font-semibold"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div></div></header><main class="relative pt-14 bg-surface w-full px-space-lg min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Operational Banner & Subtitle -->
+<section class="py-space-md flex flex-col xl:flex-row xl:items-end justify-between gap-space-md border-b-0">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-amber-500/15 text-amber-300">
+          LEVEL-2 HUMAN ESCALATION GATE
+        </span>
+<span class="font-code-sm text-code-sm text-outline">QUEUE ID: SEC-APP-9014</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Approvals Queue</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        অনুমোদন সারি — ঝুঁকিপূর্ণ পদক্ষেপ পর্যালোচনা
+        <span class="text-outline mx-2">·</span>
+<span class="text-amber-300 font-headline-sm">Pending Action: 3 items</span> requiring immediate cryptographic human sign-off
+      </p>
+</div>
+<!-- Live Status & Global Queue Metrics -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps text-on-surface">Live Queue: Syncing (every 5s)</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container shadow-sm font-label-caps text-label-caps text-outline">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock_clock</span>
+<span>Auto-Deny Rule: T-15m Active</span>
+</div>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors shadow-sm font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px] text-primary">filter_list</span>
+<span>Preset: High Risk Only</span>
+</button>
+</div>
+</section>
+<!-- Filter & Control Deck -->
+<section class="mt-space-md p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-label-caps text-label-caps text-outline uppercase pl-2">Filter By:</span>
+<!-- Agent Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm px-3 py-1.5 pr-8 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option selected="">All Agents (3 Active)</option>
+<option>BankDesk Assistant (Production)</option>
+<option>WealthAdvisor Bot</option>
+<option>OpsNavigator</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-outline absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Risk Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm px-3 py-1.5 pr-8 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option selected="">Risk: Critical &amp; High</option>
+<option>All Risk Levels</option>
+<option>Critical (0.90+)</option>
+<option>High (0.75 - 0.89)</option>
+<option>Medium (0.50 - 0.74)</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-outline absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Expiry Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm px-3 py-1.5 pr-8 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option selected="">Expiry: Urgent (&lt;15m)</option>
+<option>All Expiries</option>
+<option>&lt; 5m Left</option>
+<option>&lt; 30m Left</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-outline absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Batch Controls & Keyboard Shortcuts hint -->
+<div class="flex items-center gap-space-md pr-2">
+<div class="hidden lg:flex items-center gap-space-sm text-outline font-code-sm text-code-sm">
+<span>Quick Keys:</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps text-label-caps">↑/↓ Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps">[A] Approve</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-error font-label-caps text-label-caps">[D] Deny</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface text-body-sm font-headline-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">select_all</span>
+<span>Bulk Mode</span>
+</button>
+</div>
+</section>
+<!-- Main Split Console -->
+<div class="mt-space-md grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- LEFT COLUMN: Queue Card List -->
+<aside class="xl:col-span-4 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-caps text-label-caps text-outline uppercase">Pending Items (3)</span>
+<span class="font-code-sm text-code-sm text-primary">Sorted by Risk &amp; TTL</span>
+</div>
+<!-- CARD 1: Selected / Active Card -->
+<article class="p-space-md rounded-xl bg-surface-container-high shadow-md relative overflow-hidden transition-all duration-150 cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">BankDesk Assistant</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline block mt-0.5">Production · Pod-04</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300">
+            High Risk · 0.88
+          </span>
+</div>
+<div class="mt-3 p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-code-md text-code-md text-primary font-semibold block break-all">
+            issue_refund · 9,500 BDT
+          </span>
+</div>
+<p class="mt-2.5 font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          R-042 Financial Discretion Limit (&gt;5,000 BDT)
+        </p>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-outline bg-surface-container-high">
+<div class="flex items-center gap-1 text-amber-300 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span>Expires in 12:40</span>
+</div>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="text-on-surface-variant">VIP Cust #88219</span>
+<span>·</span>
+<span>3m ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 2: OpsNavigator (Critical) -->
+<article class="p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high shadow-sm relative overflow-hidden transition-all duration-150 cursor-pointer">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">terminal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">OpsNavigator</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline block mt-0.5">Infra Engine · Worker-09</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-error/20 text-error">
+            Critical · 0.94
+          </span>
+</div>
+<div class="mt-3 p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-code-md text-code-md text-error font-semibold block break-all">
+            revoke_api_credential · aws_prod_iam
+          </span>
+</div>
+<p class="mt-2.5 font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          R-089 Destructive Cloud Resource Modification
+        </p>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1 text-error font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>Expires in 04:15</span>
+</div>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="text-on-surface-variant">KubeSec Service</span>
+<span>·</span>
+<span>7m ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 3: WealthAdvisor Bot (Medium Risk) -->
+<article class="p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high shadow-sm relative overflow-hidden transition-all duration-150 cursor-pointer">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">query_stats</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">WealthAdvisor Bot</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline block mt-0.5">Advisory · Cluster-West</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant">
+            Medium Risk · 0.62
+          </span>
+</div>
+<div class="mt-3 p-2 rounded-lg bg-surface-container-lowest">
+<span class="font-code-md text-code-md text-on-surface font-semibold block break-all">
+            export_portfolio_csv · 42 Records
+          </span>
+</div>
+<p class="mt-2.5 font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          R-019 Bulk PII &amp; Financial Export Gate
+        </p>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-outline">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Expires in 28:50</span>
+</div>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="text-on-surface-variant">Portfolio Desk</span>
+<span>·</span>
+<span>12m ago</span>
+</div>
+</div>
+</article>
+<!-- Real-time stream telemetry info -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-low text-outline flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sensors</span>
+<span class="font-code-sm text-code-sm">Ingest: 142 req/min · Escaped: 0</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">SLO: 99.98%</span>
+</div>
+</aside>
+<!-- RIGHT COLUMN: Deep Audit & Sign-off Dossier -->
+<main class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Primary Action Card Header -->
+<div class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-primary/10 text-primary">
+              CASE: #APP-2024-0982
+            </span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-amber-500/15 text-amber-300">
+              ACTION: issue_refund
+            </span>
+</div>
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-primary">fingerprint</span>
+<span>Trace Hash: 8f4c99a2e104b901</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-snug">
+            Agent wants to issue a refund of 9,500 BDT
+          </h2>
+<p class="mt-1 font-body-lg text-body-lg text-primary-fixed-dim">
+            এজেন্ট ৯,৫০০ টাকা ফেরত (রিফান্ড) প্রদান করতে চাইছে।
+          </p>
+</div>
+<!-- Target Metadata Rail -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Target Agent</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">BankDesk Assistant</span>
+<span class="font-code-sm text-code-sm text-outline">v2.1-prod · Tier 1 Client Desk</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Target Account</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">Account #88219 (VIP)</span>
+<span class="font-code-sm text-code-sm text-outline">Holder: S. Mahmud</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase">Initiator Origin</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Web Chat #9941</span>
+<span class="font-code-sm text-code-sm text-outline">IP: 103.205.71.18 (Dhaka)</span>
+</div>
+</div>
+<!-- Urgent Expiration Banner -->
+<div class="p-3 rounded-lg bg-amber-500/10 flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-300 text-[20px]">timer</span>
+<span class="font-body-md text-body-md text-amber-200">
+              Review window expires in <strong class="font-headline-sm text-amber-300">12 minutes 40 seconds</strong>.
+            </span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-lowest text-amber-300">
+            AUTO-DENIAL ENFORCED
+          </span>
+</div>
+</div>
+<!-- Execution Timeline / Prompt Trace -->
+<section class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Causal Prompt Trace &amp; Action Chain</h3>
+</div>
+<span class="font-label-caps text-label-caps text-outline">UTC SYNC RECORD</span>
+</div>
+<div class="relative pl-6 space-y-space-md">
+<!-- Step 1 -->
+<div class="relative flex flex-col gap-1">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-secondary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps text-secondary">Step 1 · User Inbound Query</span>
+<span class="font-code-sm text-code-sm">14:28:12 UTC</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md">
+              “I was charged twice for transaction #TX-9018, please refund 9,500 BDT immediately.”
+            </div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col gap-1">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-tertiary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps text-tertiary">Step 2 · Document Retrieval &amp; Cross-Check</span>
+<span class="font-code-sm text-code-sm">14:28:18 UTC</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-body-md text-body-md flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">description</span>
+<span>Customer_Ledger_May2024.pdf</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-tertiary font-label-caps text-label-caps">MATCH 100%</span>
+</div>
+<span>Agent confirmed double-billing dispute on transaction hash TX-9018 against Core Ledger DB.</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col gap-1">
+<span class="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps text-primary">Step 3 · Tool Call Proposal (Triggered Guardrail)</span>
+<span class="font-code-sm text-code-sm">14:28:22 UTC</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-lowest font-code-md text-code-md text-primary">
+              issue_refund(recipient="ACC-88219", amount=9500, currency="BDT", reason="Dispute TX-9018")
+            </div>
+</div>
+</div>
+</section>
+<!-- Why This Needs Approval (Policy Guardrail Breakdown) -->
+<section class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-400 text-[22px]">policy</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Why This Needs Human Approval</h3>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">
+            2 POLICIES TRIPPED
+          </span>
+</div>
+<!-- Policy Card 1 -->
+<div class="p-space-md rounded-lg bg-amber-500/10 flex flex-col gap-2">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<span class="font-headline-sm text-headline-sm text-amber-200">
+              Rule R-042: Autonomous Refund Threshold
+            </span>
+<span class="font-code-sm text-code-sm text-amber-300">Severity: HIGH_ESC</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Autonomous agent transactions &gt; 5,000 BDT require Level-2 Security Sign-off before gateway propagation.
+          </p>
+<div class="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between text-code-sm font-code-sm">
+<span class="text-on-surface-variant">Attempted: <span class="text-amber-300 font-semibold">9,500 BDT</span></span>
+<span class="text-outline">Max Autonomous Limit: 5,000 BDT</span>
+<span class="text-error font-semibold">+90% OVER LIMIT</span>
+</div>
+</div>
+<!-- Secondary Flag -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">
+              Flag F-11: Velocity Anomaly Detected
+            </span>
+<span class="font-label-caps text-label-caps text-primary">CONFIDENCE 89%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            High velocity refund requests detected on account #88219 within the last 48 hours (3 attempts recorded).
+          </p>
+</div>
+</section>
+<!-- Sanitized Monospace Payload Box -->
+<section class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">data_object</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Redacted Execution Context</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">PII Masking Active</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest font-code-md text-code-md overflow-x-auto">
+<div class="text-outline mb-2">// Payload Context [Sanitized &amp; Nonce-Stamped]</div>
+<pre class="text-primary-fixed-dim leading-relaxed"><code>{
+  <span class="text-outline">"agent_id":</span> <span class="text-primary">"bd-asst-prod-04"</span>,
+  <span class="text-outline">"action":</span> <span class="text-primary">"issue_refund"</span>,
+  <span class="text-outline">"destination":</span> <span class="text-secondary">"BKASH-WALLET:01712-XXXXXX"</span>,
+  <span class="text-outline">"amount":</span> <span class="text-amber-300">9500.00</span>,
+  <span class="text-outline">"currency":</span> <span class="text-primary">"BDT"</span>,
+  <span class="text-outline">"auth_token_preview":</span> <span class="text-outline">"sha256:8f4c...[REDACTED_BY_SHIELD]"</span>,
+  <span class="text-outline">"matched_policy_hash":</span> <span class="text-tertiary">"pol-bank-strict-v2.1"</span>,
+  <span class="text-outline">"nonce":</span> <span class="text-outline">"0x98bbf028192a"</span>
+}</code></pre>
+</div>
+</section>
+<!-- Decision Rationale Input & Controls -->
+<section class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-headline-sm text-headline-sm text-on-surface" for="analyst-rationale">
+            Decision note / Audit rationale <span class="text-error">*</span>
+</label>
+<span class="font-body-sm text-body-sm text-outline">
+            Mandatory rationale for tamper-evident compliance audit trail.
+          </span>
+</div>
+<textarea class="w-full p-space-md bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner resize-y" id="analyst-rationale" placeholder="Enter rationale for compliance record (e.g., Verified transaction duplicate in core banking ledger and confirmed customer phone KYC)..." rows="3"></textarea>
+<!-- Action Control Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm pt-2">
+<!-- Approve Button -->
+<button class="w-full sm:flex-1 py-3 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-sm transition-all hover:shadow-md cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Approve (অনুমোদন)</span>
+<span class="ml-2 font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-on-primary/20 text-on-primary">
+              [A]
+            </span>
+</button>
+<!-- Deny Button -->
+<button class="w-full sm:flex-1 py-3 px-space-md rounded-lg bg-error-container hover:bg-error-container/80 text-on-error-container font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Deny (প্রত্যাখ্যান)</span>
+<span class="ml-2 font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-on-error-container/20 text-on-error-container">
+              [D]
+            </span>
+</button>
+<!-- Step-up Verification Button -->
+<button class="w-full sm:w-auto py-3 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Request Step-up</span>
+</button>
+</div>
+<!-- Cryptographic Signing Footnote -->
+<div class="pt-2 flex items-center gap-2 text-outline font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+<span>Your decision will be cryptographically signed with analyst key (ed25519) and permanently recorded in immutable audit log (Block #184,303).</span>
+</div>
+</section>
+</main>
+</div>
+<!-- Operational Flow Chart / Velocity Graphic -->
+<section class="mt-space-lg p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-1 max-w-lg">
+<span class="font-label-caps text-label-caps text-primary">REAL-TIME RISK TRAJECTORY</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Discretion Limit Guardrail Dynamics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Historical 24h refund pattern for BankDesk Assistant. Discretion deviations exceeding 5,000 BDT automatically shift out of autonomous status into the Level-2 Human Approval queue.
+      </p>
+</div>
+<!-- Inline SVG Sparkline / Graph -->
+<div class="w-full md:w-96 flex flex-col gap-1">
+<div class="flex items-center justify-between text-code-sm font-code-sm text-outline">
+<span>24h Refund Velocity</span>
+<span class="text-amber-300 font-semibold">Current Spike: 9,500 BDT</span>
+</div>
+<div class="h-20 w-full p-2 rounded-lg bg-surface-container-lowest flex items-end">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 300 60">
+<!-- Threshold line 5,000 BDT -->
+<line stroke="currentColor" stroke-dasharray="3 3" stroke-opacity="0.3" stroke-width="1.5" x1="0" x2="300" y1="28" y2="28"></line>
+<!-- Curve -->
+<path d="M0,52 Q40,48 80,45 T160,40 T220,44 T260,10 L300,8" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Current anomaly indicator circle -->
+<circle cx="260" cy="10" fill="#f59e0b" r="4"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-code-sm font-code-sm text-outline px-1">
+<span>00:00 UTC</span>
+<span>Discretion Threshold: 5,000 BDT</span>
+<span>14:30 (Now)</span>
+</div>
+</div>
+</section>
+<!-- Empty State Preview Section (When Queue is Cleared) -->
+<section class="mt-space-lg p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">visibility</span>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">
+          Empty state preview (When queue is cleared)
+        </span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-surface-container text-tertiary">
+        ● Live Gateway Active · 0 in queue
+      </span>
+</div>
+<!-- Calm Minimalist Zero-Queue Card -->
+<div class="py-space-xl px-space-lg rounded-xl bg-surface-container flex flex-col items-center justify-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary mb-space-sm shadow-inner">
+<span class="material-symbols-outlined text-[32px]">verified</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface">
+        No pending approvals / কোনো মুলতুবি অনুমোদন নেই
+      </h4>
+<p class="mt-2 max-w-lg font-body-md text-body-md text-on-surface-variant">
+        All 12 agent actions are operating within pre-authorized policy thresholds. New approval requests will appear here in real time.
+      </p>
+<div class="mt-space-md flex flex-wrap items-center justify-center gap-space-sm text-code-sm font-code-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+<span>Zero Escalations</span>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">shield</span>
+<span>Proof Layer Active</span>
+</span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">update</span>
+<span>Auto-Polling Active</span>
+</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Keyboard shortcut listener for instantaneous human sign-off
+  document.addEventListener('keydown', function(event) {
+    if (event.target.tagName === 'TEXTAREA' || event.target.tagName === 'INPUT') return;
+    
+    if (event.key === 'a' || event.key === 'A') {
+      const rationale = document.getElementById('analyst-rationale');
+      if (rationale) {
+        rationale.focus();
+        rationale.placeholder = "Enter quick rationale to complete cryptographic approval...";
+      }
+    } else if (event.key === 'd' || event.key === 'D') {
+      const rationale = document.getElementById('analyst-rationale');
+      if (rationale) {
+        rationale.focus();
+        rationale.placeholder = "Enter reason for rejection/denial for the immutable log...";
+      }
+    }
+  });
+</script></main></div></body></html>

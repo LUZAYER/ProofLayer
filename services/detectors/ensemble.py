@@ -124,7 +124,13 @@ class DetectorEnsemble:
                     if "CANARY" in f.entity_type:
                         has_canary = True
 
-        raw_score = (0.55 * rule_score) + (0.35 * ml_score) + structural_bump
+        # Ensemble combination: Take maximum of rule and ML scores plus structural anomalies
+        base_threat = max(rule_score, ml_score * 0.95 if ml_score > 0.65 else ml_score * 0.5)
+        raw_score = base_threat + structural_bump
+        if ml_score >= 0.70:
+            all_categories.append("ML_CLASSIFIER_ANOMALY")
+        all_categories = sorted(set(all_categories))
+
         # If a CRITICAL rule fired or canary leaked, force risk score to >= 0.95
         if (
             rule_eval_1.max_severity == "CRITICAL"

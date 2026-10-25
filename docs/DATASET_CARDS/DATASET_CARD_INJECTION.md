@@ -4,24 +4,25 @@
 **Origin**: 100% Synthetic, curated templates and lexical slots for benign banking support and adversarial probes.
 
 ## Splits and Counts
-- `injection_train`: 64 samples
-- `injection_val`: 21 samples
-- `injection_test_heldout`: 23 samples
-- `injection_test_adaptive`: 23 samples (mutated with unseen transforms)
-- `benign_train`: 216 samples
-- `benign_val`: 72 samples
-- `benign_test`: 72 samples
+- `injection_train`: 1118 samples
+- `injection_val`: 239 samples
+- `injection_test_heldout`: 241 samples
+- `injection_test_adaptive`: 241 samples (mutated with unseen transforms)
+- `benign_train`: 836 samples
+- `benign_val`: 179 samples
+- `benign_test`: 180 samples
+- `pii_secrets_synthetic`: 7 samples
 
 ## SHA-256 Checksums
 ```json
 {
-  "injection_train": "74c8b9558766738eca5bfc8e2fc2aef879c9f679ca412a24ed3c10ae7f11150d",
-  "injection_val": "decf680ba22a0a28d9d1b41e2a401ae983a13f40faa982243a873de57c1398fc",
-  "injection_test_heldout": "6902b0f64600b49a15cb4293171aea13195d0580f7f7b2a66f2c92c3326ec500",
-  "injection_test_adaptive": "5e1dc564c791904c14c80489c0dd2149c7af98c43d7a4a98631e6b6b155a8337",
-  "benign_train": "ca93b172a6f5cf4a78012f1025199226daae5747482afbb6bed338eb0b991392",
-  "benign_val": "68aebfab929f8fc137d9c983d15954e3e91ceca26cc5228d22414b673557cd80",
-  "benign_test": "d9403150348247bcbb10915ffee708e879dae26cf1e11d2c1baff777a68f4851",
+  "injection_train": "55e188b56f01dd09ac09d1d30db8f5a39659a704300c108905378851b29f7ef6",
+  "injection_val": "589bd95a3504239013cd4f284673d906c7e51c95c6ec224c3d51dfc034dc4eb6",
+  "injection_test_heldout": "6a6d5ac6985bdb912cb80d4192b65a740b8411a213730d2f8009ff12a3fbe238",
+  "injection_test_adaptive": "04bfe79365f9992e1e3ca885f6e6160483c19befc371477964a413f37cf895be",
+  "benign_train": "a16a915f6530203e8adea00cd91d34ce57f50b488d5a3062e8191fbc8d3ec5e8",
+  "benign_val": "1d006ddf9f8d7afcb84e54569291df58e029ab7869cfbbd3d17da361455cf180",
+  "benign_test": "9ae056b4922de8bdbd2c327ae5e40c6d37fa9fd7601198746488db32d7abdf45",
   "pii_secrets_synthetic": "1a8fa0c7b3fccdfda6aea2e2d02e75e6a8e4a7d1850818cfe76000748c2ee8dd"
 }
 ```

@@ -2,12 +2,12 @@
 **Model Architecture**: Char n-gram (1–5) TF-IDF + Calibrated Logistic Regression (Platt scaling / sigmoid)
 **Framework**: scikit-learn
 **Hardware**: CPU-only (<15ms latency per inference)
-**Training Samples**: 280
+**Training Samples**: 1954
 **Validation Metrics**:
-- Accuracy: 1.0000
-- Precision: 1.0000
-- Recall: 1.0000
-- F1-Score: 1.0000
+- Accuracy: 0.9545
+- Precision: 0.9661
+- Recall: 0.9540
+- F1-Score: 0.9600
 
 ## Data Provenance & Leakage Protection
 Trained strictly on synthetic `injection_train` and `benign_train`.

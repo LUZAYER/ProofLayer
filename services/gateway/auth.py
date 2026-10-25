@@ -37,13 +37,13 @@ DEFAULT_TENANTS: dict[str, TenantUser] = {
     "pl-admin-demo-key-2026": TenantUser(
         tenant_id="tenant-padma-bank",
         role="admin",
-        name="Padma Bank Admin",
+        name="Reyazul Islam (Lead SecOps)",
         api_key_prefix="pl-admin",
     ),
     "pl-analyst-demo-key-2026": TenantUser(
         tenant_id="tenant-padma-bank",
         role="analyst",
-        name="Security Analyst",
+        name="Reyazul Islam (Lead SecOps)",
         api_key_prefix="pl-analyst",
     ),
     "pl-viewer-demo-key-2026": TenantUser(
@@ -90,7 +90,7 @@ class AuthManager:
             return TenantUser(
                 tenant_id=os.getenv("DEFAULT_TENANT_ID", "tenant-padma-bank"),
                 role="admin",
-                name="Default Admin (Dev Mode)",
+                name="Reyazul Islam (Lead SecOps)",
                 api_key_prefix="dev-admin",
             )
 

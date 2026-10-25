@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20;display:inline-block;vertical-align:middle;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary":"#adc6ff","surface-bright":"#34394a","surface-dim":"#0e1323","error-container":"#93000a","primary-fixed":"#62fae3","outline":"#859490","on-secondary-fixed-variant":"#004395","on-tertiary":"#003824","on-primary-fixed-variant":"#005047","secondary-container":"#0566d9","on-error-container":"#ffdad6","surface-variant":"#2f3446","primary-fixed-dim":"#3cddc7","surface-container-low":"#161b2b","primary":"#57f1db","surface-tint":"#3cddc7","surface-container-lowest":"#080d1d","secondary-fixed-dim":"#adc6ff","surface-container-highest":"#2f3446","on-background":"#dee1f9","error":"#ffb4ab","inverse-primary":"#006b5f","secondary-fixed":"#d8e2ff","on-tertiary-fixed-variant":"#005236","on-surface":"#dee1f9","background":"#0e1323","tertiary-fixed-dim":"#4edea3","surface-container":"#1a1f30","primary-container":"#2dd4bf","on-surface-variant":"#bacac5","outline-variant":"#3c4a46","tertiary":"#66f3b6","on-secondary-fixed":"#001a42","on-primary-fixed":"#00201c","on-error":"#690005","on-primary":"#003731","on-secondary-container":"#e6ecff","tertiary-fixed":"#6ffbbe","surface":"#0e1323","on-secondary":"#002e6a","tertiary-container":"#44d69b","on-tertiary-fixed":"#002113","surface-container-high":"#25293a","inverse-on-surface":"#2b3041","on-primary-container":"#00574d","on-tertiary-container":"#00593b","inverse-surface":"#dee1f9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-md":"1rem","space-xl":"2rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-desktop":"1.5rem","gutter-desktop":"1.5rem","margin":"1rem","space-xs":"0.25rem"},"fontFamily":{"code-sm":["JetBrains Mono"],"body-md":["Inter"],"code-md":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"body-lg":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"]},"fontSize":{"code-sm":["0.6875rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"code-md":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.06em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"headline-lg-mobile":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-sm":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"600"}],"headline-md":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col h-full"><div class="h-14 px-space-md flex items-center justify-between bg-surface-container-lowest/50"><div class="flex items-center gap-space-sm"><img alt="ProofLayer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UpbSauNvlA1-G8b753QujbY43zr-K25kgk56IBxFj37rr9gUBcz-ElixFkIPDwCIrPXWKJPfQQV5h42eAWNusu_tn5ZUcVWSzShv6_6_hJgB2DGqbWGlZp5quKHGIecAQALAhOqy_BMkYGTct0fO2UR5JTs7vQ076i7bHIkNnV5JoTr5Qst0nMe5ynTbip2EdpbQcO0GKiufVi2DwehEDYIbslFhZjpDtGIzEz4hoYnQ"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ProofLayer</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-primary-fixed">v1.4 Ent</span></div><nav class="flex-1 px-space-sm py-space-sm space-y-0.5 overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-headline-sm"><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Overview</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">একনজরে / Overview</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="live-traffic" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Live Traffic</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">লাইভ ট্রাফ্টিক</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incidents" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Incidents</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">ঘটনা ও ঝুঁকি</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="approvals" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Approvals</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">অনুমোদন</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">3</span></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="policies" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Policies</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">পলিসি</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="red-team" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Red Team</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">রেড টিম</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="proof-and-audit" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Proof &amp; Audit</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">প্রমাণ ও অডিট</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="playground" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Playground</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">প্লেগ্রাউন্ড</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sandbox" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Sandbox</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">স্যান্ডবক্স</span></div></a><a class="group flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="min-w-0 truncate"><span class="font-headline-sm text-headline-sm block truncate leading-tight">Settings</span><span class="font-code-sm text-code-sm block text-outline truncate leading-tight">সেটিংস</span></div></a></nav></div><div class="p-space-sm m-space-sm rounded-lg bg-surface-container"><div class="flex items-center gap-space-sm"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span></span><div class="min-w-0 flex-1"><span class="font-headline-sm text-headline-sm block text-on-surface leading-tight truncate">12/12 Agents Healthy</span><span class="font-code-sm text-code-sm text-outline block leading-tight truncate">Continuous Telemetry</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.2)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center flex-1 max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-12 py-1.5 bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search agents, incidents, hash, audit logs..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">⌘K</div></div></div><div class="flex items-center gap-space-md ml-space-lg"><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container"><span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps text-label-caps text-on-surface">Shield: ACTIVE / ON</span><button aria-label="Toggle Shield Status" class="w-7 h-4 bg-primary-container rounded-full relative transition-colors" type="button"><span class="absolute right-0.5 top-0.5 w-3 h-3 rounded-full bg-on-primary-container transition-transform"></span></button></div><div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-tertiary"><span class="material-symbols-outlined text-[16px]">verified</span><span class="font-label-caps text-label-caps text-on-surface">Chain: Verified · 48,213 events</span></div><div class="flex items-center bg-surface-container rounded-full p-0.5 font-label-caps text-label-caps"><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-semibold">EN</span><span class="px-2 py-0.5 rounded-full text-outline hover:text-on-surface cursor-pointer">বাংলা</span></div><button aria-label="Toggle Light/Dark Theme" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="relative w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="text-right hidden 2xl:block"><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">T. Rahman (Lead SecOps)</span><span class="font-code-sm text-code-sm text-outline block leading-tight">BankDesk ID: 9481</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-caps font-semibold"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div></div></header><main class="relative pt-14 bg-surface w-full px-space-lg min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Dynamic Sidebar Nav Selection Sync Script -->
+<script>
+    (function syncActiveNav() {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'policies') {
+          link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+          link.classList.add('bg-surface-container-high', 'text-primary', 'font-headline-sm');
+          const bengaliSub = link.querySelector('.font-code-sm');
+          if (bengaliSub) bengaliSub.classList.replace('text-outline', 'text-primary-fixed');
+        } else {
+          link.classList.remove('bg-surface-container-high', 'text-primary', 'font-headline-sm');
+        }
+      });
+    })();
+  </script>
+<!-- Top Page Header & Quick Controls -->
+<div class="flex flex-col gap-space-md pt-space-md mb-space-lg">
+<div class="flex flex-col 2xl:flex-row 2xl:items-center 2xl:justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-sm text-code-sm text-primary tracking-wider uppercase font-semibold">Governance &amp; Boundary Enforcement</span>
+<span class="text-outline-variant text-body-sm">/</span>
+<span class="font-code-sm text-code-sm text-outline">v2.4-Enclave-Prod</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight flex items-baseline gap-2 flex-wrap">
+<span>Policies &amp; Invariant Guardrails</span>
+<span class="font-headline-md text-headline-md text-outline font-normal">/ পলিসি ও সুরক্ষা বিধিমালা</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Declarative runtime guardrails, deterministic output validators, and compliance bounds across 12 connected agent fleets. Cryptographically verified at every layer.
+        </p>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-sm text-headline-sm flex items-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>Export Policy Set</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm flex items-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">science</span>
+<span>Simulate &amp; Dry-Run</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-sm text-headline-sm flex items-center gap-2 shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-primary-container">add_circle</span>
+<span>+ Create New Policy <span class="font-normal opacity-80 text-body-sm">/ নতুন পলিসি</span></span>
+</button>
+</div>
+</div>
+<!-- Live Policy Sync Bar -->
+<div class="flex items-center justify-between px-space-md py-2 rounded-lg bg-surface-container-low shadow-sm flex-wrap gap-2">
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-on-surface font-medium font-code-sm text-code-sm">Policy Engine v2.4</span>
+<span class="text-outline-variant">·</span>
+<span class="text-on-surface-variant">18 Enforced Rules active</span>
+<span class="text-outline-variant">·</span>
+<span class="text-tertiary font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">lock</span> In-Sync with Enclave HSM
+        </span>
+</div>
+<div class="flex items-center gap-space-md font-label-caps text-label-caps text-outline">
+<span>MERKLE ROOT: 0x9f4a...812d</span>
+<span>LAST SIGNED: 3m ago by HSM-01</span>
+</div>
+</div>
+</div>
+<!-- Telemetry & Health Metrics (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Metric 1: Active Rules -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Active Enforced Rules</span>
+<span class="font-body-sm text-body-sm text-outline-variant">কার্যকরী সুরক্ষা নিয়ম</span>
+</div>
+<span class="p-1.5 rounded-lg bg-surface-container text-primary material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">18</span>
+<span class="font-code-sm text-code-sm text-outline">Rules Active</span>
+</div>
+<div class="flex items-center gap-2 font-code-sm text-code-sm">
+<span class="px-1.5 py-0.5 rounded bg-error-container/40 text-error">12 Block</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">4 Escalated</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary">2 Redact</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: Guardrail Overhead -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Latency Overhead</span>
+<span class="font-body-sm text-body-sm text-outline-variant">যাচাইকরণ বিলম্ব</span>
+</div>
+<span class="p-1.5 rounded-lg bg-surface-container text-tertiary material-symbols-outlined text-[20px]">speed</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-tertiary font-bold">1.4 ms</span>
+<span class="font-code-sm text-code-sm text-outline">avg per token pass</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-outline">
+<span>P99: <strong class="text-on-surface font-code-sm text-code-sm font-medium">3.8 ms</strong></span>
+<span class="text-tertiary font-code-sm text-code-sm">-0.3ms vs baseline</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: Monthly Interceptions -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Monthly Interceptions</span>
+<span class="font-body-sm text-body-sm text-outline-variant">মাসিক প্রতিরোধ সংখ্যা</span>
+</div>
+<span class="p-1.5 rounded-lg bg-surface-container text-secondary material-symbols-outlined text-[20px]">rule_folder</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">4,192</span>
+<span class="font-label-caps text-label-caps px-1 rounded bg-secondary-container/50 text-secondary">+14% MoM</span>
+</div>
+<p class="font-code-sm text-code-sm text-primary">0 false escapees (100% precision)</p>
+</div>
+</div>
+<!-- Metric 4: Compliance Baseline -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Compliance Baseline</span>
+<span class="font-body-sm text-body-sm text-outline-variant">সম্মতি মানদণ্ড</span>
+</div>
+<span class="p-1.5 rounded-lg bg-surface-container text-primary material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">100%</span>
+<span class="font-code-sm text-code-sm text-outline">Verified</span>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate">
+          ISO 42001 &amp; BB ICT v3.0 Certified
+        </p>
+</div>
+</div>
+</div>
+<!-- Policy Categories Filter Toolbar -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<!-- Category Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-headline-sm whitespace-nowrap shadow-sm" type="button">
+        All Policies (18)
+      </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" type="button">
+        Financial Bounds (4)
+      </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" type="button">
+        Prompt Injection &amp; Jailbreak (5)
+      </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" type="button">
+        PII &amp; Data Leakage (3)
+      </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" type="button">
+        Tool Execution Safety (4)
+      </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm whitespace-nowrap transition-colors" type="button">
+        Bengali / Script Normalization (2)
+      </button>
+</div>
+<!-- Search & Dropdown Filters Bar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center flex-1 max-w-xl relative">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 bg-surface-container rounded-lg text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Search rules, triggers, logic, or agent bindings..." type="text"/>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs font-body-sm text-body-sm">
+<!-- Target Agent Filter -->
+<div class="relative">
+<select aria-label="Target Agent filter" class="appearance-none bg-surface-container text-on-surface font-code-sm text-code-sm pl-3 pr-8 py-1.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-sm">
+<option>Target Agent: All 12 Fleets</option>
+<option>BankDesk Assistant (Prod)</option>
+<option>WealthAdvisor Bot</option>
+<option>CustomerSupport v2</option>
+<option>OpsNavigator</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Action Mode Filter -->
+<div class="relative">
+<select aria-label="Action Mode filter" class="appearance-none bg-surface-container text-on-surface font-code-sm text-code-sm pl-3 pr-8 py-1.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-sm">
+<option>Action: All Actions (Block, Escalate, Redact)</option>
+<option>BLOCK_AND_DECOY</option>
+<option>ESCALATE_TO_HUMAN</option>
+<option>REDACT_IN_PLACE</option>
+<option>NORMALIZE_INPUT</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select aria-label="Status filter" class="appearance-none bg-surface-container text-on-surface font-code-sm text-code-sm pl-3 pr-8 py-1.5 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-sm">
+<option>Status: Enabled Only</option>
+<option>Status: All Rules</option>
+<option>Status: Dry-Run Only</option>
+<option>Status: Disabled</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+<span>Priority</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Split Grid: Rule List + Interactive Policy Builder -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- LEFT PANEL (7 Cols): Comprehensive Rule Stack -->
+<div class="xl:col-span-7 flex flex-col gap-space-sm">
+<!-- RULE 1: Selected / Highlighted Card -->
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-md transition-all relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> ESCALATE_TO_HUMAN
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps">FINANCIAL BOUND</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">POL-BANK-STRICT-042</span>
+</div>
+<!-- Toggle Switch ON -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary">Enforced</span>
+<button aria-label="Toggle rule POL-BANK-STRICT-042" class="w-8 h-4.5 bg-primary-container rounded-full relative p-0.5 transition-colors" type="button">
+<span class="block w-3.5 h-3.5 rounded-full bg-on-primary-container shadow-sm translate-x-3.5 transition-transform"></span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-1">
+          Autonomous Financial Limit Cap (অর্থনৈতিক সীমা নির্ধারণ)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Restricts non-consensual fund disbursement, refunds, or wallet transfers above strict statutory thresholds for consumer transactions.
+        </p>
+<!-- Condition & Scope Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest font-code-sm text-code-sm space-y-1 mb-space-sm">
+<div class="flex items-center gap-2 text-outline">
+<span class="text-tertiary">TRIGGER:</span>
+<span class="text-on-surface">tool_call.issue_refund.amount &gt; 5,000 BDT <span class="text-outline">OR</span> cumulative_24h &gt; 20,000 BDT</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="text-secondary">TARGET:</span>
+<span class="text-on-surface">BankDesk Assistant (Production Agent Fleet)</span>
+</div>
+</div>
+<!-- Card Footer Telemetry -->
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2 text-outline flex-wrap gap-2">
+<div class="flex items-center gap-space-md font-code-sm text-code-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">34</strong> intercepts this week</span>
+<span class="text-tertiary">0 disputes</span>
+<span class="text-outline font-label-caps text-label-caps">sha256:4b91...a10e</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="text-primary hover:text-primary-fixed-dim font-headline-sm text-headline-sm flex items-center gap-0.5" type="button">
+<span>Inspect Logic</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RULE 2: Indirect Prompt Injection -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container shadow-sm transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">gpp_bad</span> BLOCK_AND_DECOY
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps">PROMPT INJECTION</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">POL-SEC-INJECT-014</span>
+</div>
+<!-- Toggle Switch ON -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary">Enforced</span>
+<button aria-label="Toggle rule POL-SEC-INJECT-014" class="w-8 h-4.5 bg-primary-container rounded-full relative p-0.5" type="button">
+<span class="block w-3.5 h-3.5 rounded-full bg-on-primary-container translate-x-3.5"></span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-1">
+          Indirect Prompt Injection &amp; Document Delimiter Guard
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Scans external RAG document chunks, OCR uploads, and dynamic web results for adversarial prompt injections, DAN payloads, and delimiter escapes.
+        </p>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest font-code-sm text-code-sm space-y-1 mb-space-sm">
+<div class="flex items-center gap-2 text-outline">
+<span class="text-tertiary">TRIGGER:</span>
+<span class="text-on-surface">semantic_score &gt; 0.88 <span class="text-outline">OR</span> zero_width_payload == true (ZWJ/ZWNJ anomalies)</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="text-secondary">TARGET:</span>
+<span class="text-on-surface">All Agent Fleets (Global Invariant)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2 text-outline flex-wrap gap-2">
+<div class="flex items-center gap-space-md font-code-sm text-code-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">128</strong> blocks this week</span>
+<span class="text-primary font-label-caps text-label-caps">Cryptographic Log Signed</span>
+<span class="text-outline font-label-caps text-label-caps">sha256:d83c...9821</span>
+</div>
+<button class="text-outline hover:text-on-surface font-headline-sm text-headline-sm" type="button">Configure</button>
+</div>
+</div>
+<!-- RULE 3: PII Masking -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container shadow-sm transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility_off</span> REDACT_IN_PLACE
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps">PII &amp; COMPLIANCE</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">POL-PII-MASK-008</span>
+</div>
+<!-- Toggle Switch ON -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary">Enforced</span>
+<button aria-label="Toggle rule POL-PII-MASK-008" class="w-8 h-4.5 bg-primary-container rounded-full relative p-0.5" type="button">
+<span class="block w-3.5 h-3.5 rounded-full bg-on-primary-container translate-x-3.5"></span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-1">
+          NID, Mobile Banking &amp; Account Number Redaction (ব্যক্তিগত তথ্য ফিল্টার)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Deterministic DLP scanner masking bKash, Nagad, 10/17-digit Bangladesh National IDs, and credit card PANs before LLM ingestion.
+        </p>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest font-code-sm text-code-sm space-y-1 mb-space-sm">
+<div class="flex items-center gap-2 text-outline">
+<span class="text-tertiary">TRIGGER:</span>
+<span class="text-on-surface">regex(NID_BD_STRICT) || regex(MFS_WALLET_PATTERN) || regex(LUHN_PAN)</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="text-secondary">TARGET:</span>
+<span class="text-on-surface">WealthAdvisor Bot, CustomerSupport v2</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2 text-outline flex-wrap gap-2">
+<div class="flex items-center gap-space-md font-code-sm text-code-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">891</strong> redactions logged</span>
+<span class="text-tertiary">Token Preserving</span>
+<span class="text-outline font-label-caps text-label-caps">sha256:71ac...5529</span>
+</div>
+<button class="text-outline hover:text-on-surface font-headline-sm text-headline-sm" type="button">Configure</button>
+</div>
+</div>
+<!-- RULE 4: Tool Execution Recursion Depth -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container shadow-sm transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cancel</span> TERMINATE_CHAIN
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps">EXECUTION RUNTIME</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">POL-TOOL-DEPTH-003</span>
+</div>
+<!-- Toggle Switch ON -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary">Enforced</span>
+<button aria-label="Toggle rule POL-TOOL-DEPTH-003" class="w-8 h-4.5 bg-primary-container rounded-full relative p-0.5" type="button">
+<span class="block w-3.5 h-3.5 rounded-full bg-on-primary-container translate-x-3.5"></span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-1">
+          Recursive Tool Call Execution Depth Cap
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Halts unbounded multi-hop agent orchestration chains to mitigate computational amplification and infinite sub-agent query loops.
+        </p>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest font-code-sm text-code-sm space-y-1 mb-space-sm">
+<div class="flex items-center gap-2 text-outline">
+<span class="text-tertiary">TRIGGER:</span>
+<span class="text-on-surface">call_chain.depth &gt; 3 <span class="text-outline">OR</span> unique_subqueries &gt; 5</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="text-secondary">TARGET:</span>
+<span class="text-on-surface">OpsNavigator, Analytics-Bot-01</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2 text-outline flex-wrap gap-2">
+<div class="flex items-center gap-space-md font-code-sm text-code-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">5</strong> halts this month</span>
+<span class="text-outline font-label-caps text-label-caps">sha256:190f...ee03</span>
+</div>
+<button class="text-outline hover:text-on-surface font-headline-sm text-headline-sm" type="button">Configure</button>
+</div>
+</div>
+<!-- RULE 5: Bengali Unicode Normalizer -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container shadow-sm transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-label-caps text-label-caps font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span> NORMALIZE_PRE_LLM
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-label-caps">LINGUISTIC DEFENSE</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">POL-LANG-UNICODE-002</span>
+</div>
+<!-- Toggle Switch ON -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary">Enforced</span>
+<button aria-label="Toggle rule POL-LANG-UNICODE-002" class="w-8 h-4.5 bg-primary-container rounded-full relative p-0.5" type="button">
+<span class="block w-3.5 h-3.5 rounded-full bg-on-primary-container translate-x-3.5"></span>
+</button>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-1">
+          Bengali Unicode Normalizer &amp; Homoglyph Stripper (বাংলা ইউনিকোড প্রমিতকরণ)
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Detects and normalizes zero-width joiners (ZWJ U+200D), ZWNJ (U+200C), mixed Cyrillic homoglyphs, and evasive phonetic representations in Bengali prompts.
+        </p>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest font-code-sm text-code-sm space-y-1 mb-space-sm">
+<div class="flex items-center gap-2 text-outline">
+<span class="text-tertiary">TRIGGER:</span>
+<span class="text-on-surface">has_homoglyphs || irregular_zwnj_density &gt; 0.05</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="text-secondary">TARGET:</span>
+<span class="text-on-surface">BankDesk Assistant, CustomerSupport v2</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2 text-outline flex-wrap gap-2">
+<div class="flex items-center gap-space-md font-code-sm text-code-sm">
+<span class="text-on-surface-variant"><strong class="text-on-surface">3,120</strong> prompts cleaned</span>
+<span class="text-tertiary">NFC/NFD Canonical</span>
+<span class="text-outline font-label-caps text-label-caps">sha256:88bc...210a</span>
+</div>
+<button class="text-outline hover:text-on-surface font-headline-sm text-headline-sm" type="button">Configure</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL (5 Cols): Interactive Policy Detail & Visual Builder -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-md relative">
+<!-- Header of Inspector -->
+<div class="flex items-start justify-between pb-space-sm mb-space-sm">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-code-sm text-code-sm font-bold">POL-BANK-STRICT-042</span>
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-caps text-label-caps font-semibold">SEV: HIGH</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Policy Inspector &amp; Visual Logic Builder</h2>
+<p class="font-code-sm text-code-sm text-outline">Owner: secops@prooflayer.io · Rev 2.3.1</p>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Full Screen Builder" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+</div>
+</div>
+<!-- Section 1: Agent Bindings -->
+<div class="mb-space-md">
+<label class="font-label-caps text-label-caps uppercase text-outline tracking-wider block mb-1">Target Agent Fleet Scope</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+              BankDesk Assistant (Prod)
+              <button aria-label="Remove BankDesk Assistant (Prod)" class="material-symbols-outlined text-[14px] text-outline hover:text-error" type="button">close</button>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+              Core Teller Copilot
+              <button aria-label="Remove Core Teller Copilot" class="material-symbols-outlined text-[14px] text-outline hover:text-error" type="button">close</button>
+</span>
+<button class="px-2 py-1 rounded-full bg-surface-container-highest text-primary font-label-caps text-label-caps flex items-center gap-1 hover:bg-surface-bright transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span> Add Fleet
+            </button>
+</div>
+</div>
+<!-- Section 2: Visual Condition Logic Block -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Rule Conditions (Invariant Logic)</label>
+<span class="font-code-sm text-code-sm text-primary cursor-pointer hover:underline">+ Add Condition</span>
+</div>
+<div class="space-y-2">
+<!-- Condition 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-2 font-code-sm text-code-sm flex-wrap">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">IF</span>
+<span class="text-on-surface">tool_name</span>
+<span class="text-outline">EQUALS</span>
+<span class="text-tertiary">"issue_refund"</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px] cursor-pointer hover:text-error">delete</span>
+</div>
+<!-- Condition 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-2 font-code-sm text-code-sm flex-wrap">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-amber-300 font-bold">AND</span>
+<span class="text-on-surface">arguments.amount</span>
+<span class="text-outline">&gt;</span>
+<span class="text-amber-300 font-semibold">5,000</span>
+<span class="px-1 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">BDT</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px] cursor-pointer hover:text-error">delete</span>
+</div>
+<!-- Condition 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-2 font-code-sm text-code-sm flex-wrap">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-bold">OR</span>
+<span class="text-on-surface">risk_engine.score</span>
+<span class="text-outline">&gt;</span>
+<span class="text-secondary font-semibold">0.85</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px] cursor-pointer hover:text-error">delete</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Enforcement & Fallback Action Policy -->
+<div class="mb-space-md space-y-2">
+<label class="font-label-caps text-label-caps uppercase text-outline tracking-wider block">Action &amp; Enforcement Policy</label>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="accent-primary h-4 w-4" name="enforce_action" type="radio"/>
+<div class="flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Require Level-2 Human Approval (ESCALATE)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pause agent execution, serialize session context, route to SecOps Desk</span>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+<input class="accent-primary h-4 w-4" name="enforce_action" type="radio"/>
+<div class="flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Hard Block &amp; Decoy Generation (BLOCK)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Terminate execution immediately and emit compliant polite rejection</span>
+</div>
+</label>
+</div>
+<!-- Secondary options -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="text-outline font-label-caps text-label-caps uppercase block mb-1">Approval Timeout</span>
+<div class="flex items-center justify-between text-on-surface font-code-sm text-code-sm">
+<span>Auto-Deny after</span>
+<span class="font-bold text-amber-300">15 min</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="text-outline font-label-caps text-label-caps uppercase block mb-1">Audit Ledger</span>
+<div class="flex items-center gap-1.5 text-tertiary font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Merkle Attestation ON</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Live Policy YAML Code Sandbox -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Compiled Policy Specification (YAML)</span>
+<span class="font-code-sm text-code-sm text-primary cursor-pointer hover:underline">Copy YAML</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest font-code-sm text-code-sm text-on-surface overflow-x-auto leading-relaxed">
+<div><span class="text-secondary">policy_id:</span> <span class="text-primary font-bold">pol-bank-strict-042</span></div>
+<div><span class="text-secondary">version:</span> 2.3.1</div>
+<div><span class="text-secondary">enforcement:</span> <span class="text-amber-300">HARD_BLOCK_ON_ESCALATION</span></div>
+<div><span class="text-secondary">target_fleets:</span></div>
+<div>  - <span class="text-tertiary">agent_id:</span> bankdesk-assistant-prod</div>
+<div>  - <span class="text-tertiary">agent_id:</span> core-teller-copilot</div>
+<div><span class="text-secondary">conditions:</span></div>
+<div>  - <span class="text-secondary">tool:</span> issue_refund</div>
+<div>    <span class="text-secondary">param:</span> amount</div>
+<div>    <span class="text-secondary">operator:</span> gt</div>
+<div>    <span class="text-secondary">value:</span> 5000</div>
+<div>    <span class="text-secondary">currency:</span> BDT</div>
+<div><span class="text-secondary">actions:</span></div>
+<div>  - <span class="text-secondary">route:</span> approvals_queue</div>
+<div>    <span class="text-secondary">priority:</span> urgent</div>
+<div>    <span class="text-secondary">auto_deny_seconds:</span> 900</div>
+<div>    <span class="text-secondary">hsm_attest:</span> <span class="text-primary">true</span></div>
+</div>
+</div>
+<!-- Control Buttons -->
+<div class="flex items-center justify-between pt-space-sm gap-2">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-error-container/40 hover:text-error text-outline font-headline-sm text-headline-sm transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm transition-colors" type="button">
+              Simulate Rule
+            </button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-sm text-headline-sm transition-all shadow-md" type="button">
+              Save Policy Changes
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Simulation & Dry-Run Sandbox Section (Bottom Panel) -->
+<div class="mt-space-lg p-space-lg rounded-xl bg-surface-container-low shadow-sm relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-md">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="p-1 rounded bg-secondary-container/40 text-secondary material-symbols-outlined text-[18px]">model_training</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+            Policy Dry-Run &amp; Regression Tester
+          </h2>
+<span class="font-headline-md text-headline-md text-outline">/ পলিসি সিমুলেশন টেস্ট</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Evaluate proposed rule alterations against recent production traffic traces before deploying to HSM cryptographic enclaves. Verifies zero false-positive disruption.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-lg py-2.5 rounded-lg bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-headline-sm text-headline-sm flex items-center gap-2 shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+<span>Run Pre-Flight Shadow Evaluation</span>
+</button>
+</div>
+</div>
+<!-- Simulator Test Parameters & Feedback Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-md rounded-lg bg-surface-container font-code-sm text-code-sm">
+<!-- Param 1 -->
+<div class="space-y-1">
+<span class="text-outline font-label-caps text-label-caps uppercase block">Traffic Sample Dataset</span>
+<div class="text-on-surface font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+<span>10,000 Historical Traces (Last 72h)</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline-variant">Real agent telemetry captured across production clusters</p>
+</div>
+<!-- Param 2 -->
+<div class="space-y-1">
+<span class="text-outline font-label-caps text-label-caps uppercase block">Shadow Evaluation Prediction</span>
+<div class="flex items-baseline gap-2 text-on-surface">
+<span class="text-headline-md text-headline-md font-bold text-amber-300">3.2% Gated</span>
+<span class="text-body-sm font-body-sm text-outline">(320 requests trigger policy)</span>
+</div>
+<p class="text-body-sm font-body-sm text-tertiary">0 benign customer inquiries mistakenly blocked</p>
+</div>
+<!-- Param 3 -->
+<div class="space-y-1">
+<span class="text-outline font-label-caps text-label-caps uppercase block">Projected Latency Impact</span>
+<div class="flex items-baseline gap-2 text-on-surface">
+<span class="text-headline-md text-headline-md font-bold text-primary">+1.2 ms</span>
+<span class="text-body-sm font-body-sm text-outline">Overhead Delta</span>
+</div>
+<p class="text-body-sm font-body-sm text-outline-variant">Well within the 10.0 ms SLA threshold</p>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

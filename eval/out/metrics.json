@@ -1,98 +1,98 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "timestamp": 1792942969.8473554,
-    "smoke_mode": false,
+    "timestamp": 1792953615.078412,
+    "smoke_mode": true,
     "provenance_statement": "All benchmarks executed locally on synthetic datasets and a deterministic simulated model. No external cloud API keys or proprietary third-party metrics were fabricated."
   },
   "detector_benchmarks": {
     "validation_metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "false_positive_rate": 0.0,
-      "total_samples": 93
+      "precision": 0.9693,
+      "recall": 0.9247,
+      "f1": 0.9465,
+      "false_positive_rate": 0.0391,
+      "total_samples": 418
     },
     "per_language_f1": {
-      "en": 1.0,
-      "bn": 1.0,
+      "en": 0.9274,
+      "bn": 0.9808,
       "bn-Latn": 1.0
     },
-    "adaptive_set_catch_rate": 0.9565,
+    "adaptive_set_catch_rate": 0.9627,
     "latency_ms": {
-      "p50": 2.59,
-      "p95": 4.52,
-      "p99": 5.26
+      "p50": 4.34,
+      "p95": 5.03,
+      "p99": 5.44
     }
   },
   "security_outcomes": {
-    "total_attacks_tested": 23,
-    "overall_asr_off": 0.3043,
+    "total_attacks_tested": 15,
+    "overall_asr_off": 0.1333,
     "overall_asr_off_ci95": [
-      0.156,
-      0.5087
+      0.0374,
+      0.3788
     ],
     "overall_asr_on": 0.0,
     "overall_asr_on_ci95": [
       0.0,
-      0.1431
+      0.2039
     ],
     "overall_asr_reduction_pct": 100.0,
-    "false_positive_rate": 0.1806,
+    "false_positive_rate": 0.0667,
     "per_language_asr": {
       "en": {
-        "total": 11,
+        "total": 10,
         "asr_off": {
-          "rate": 0.0909,
-          "ci_lower": 0.0162,
-          "ci_upper": 0.3774,
+          "rate": 0.1,
+          "ci_lower": 0.0179,
+          "ci_upper": 0.4041,
           "successes": 1,
-          "total": 11
+          "total": 10
         },
         "asr_on": {
           "rate": 0.0,
           "ci_lower": 0.0,
-          "ci_upper": 0.2588,
+          "ci_upper": 0.2775,
           "successes": 0,
-          "total": 11
+          "total": 10
         },
         "reduction_pct": 100.0
       },
       "bn": {
-        "total": 6,
+        "total": 4,
         "asr_off": {
-          "rate": 0.5,
-          "ci_lower": 0.1876,
-          "ci_upper": 0.8124,
-          "successes": 3,
-          "total": 6
+          "rate": 0.25,
+          "ci_lower": 0.0456,
+          "ci_upper": 0.6994,
+          "successes": 1,
+          "total": 4
         },
         "asr_on": {
           "rate": 0.0,
           "ci_lower": 0.0,
-          "ci_upper": 0.3903,
+          "ci_upper": 0.4899,
           "successes": 0,
-          "total": 6
+          "total": 4
         },
         "reduction_pct": 100.0
       },
       "bn-Latn": {
-        "total": 6,
+        "total": 1,
         "asr_off": {
-          "rate": 0.5,
-          "ci_lower": 0.1876,
-          "ci_upper": 0.8124,
-          "successes": 3,
-          "total": 6
+          "rate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.7935,
+          "successes": 0,
+          "total": 1
         },
         "asr_on": {
           "rate": 0.0,
           "ci_lower": 0.0,
-          "ci_upper": 0.3903,
+          "ci_upper": 0.7935,
           "successes": 0,
-          "total": 6
+          "total": 1
         },
-        "reduction_pct": 100.0
+        "reduction_pct": 0.0
       }
     },
     "per_category_metrics": [
@@ -100,16 +100,16 @@
         "category": "DIRECT_PROMPT_INJECTION",
         "name": "Direct Prompt Injection / Instruction Override",
         "owasp_mapping": "LLM01:2025-Prompt-Injection",
-        "total": 23,
-        "asr_off": 0.3043,
+        "total": 15,
+        "asr_off": 0.1333,
         "asr_off_ci95": [
-          0.156,
-          0.5087
+          0.0374,
+          0.3788
         ],
         "asr_on": 0.0,
         "asr_on_ci95": [
           0.0,
-          0.1431
+          0.2039
         ],
         "reduction_pct": 100.0,
         "remediation": "Enforce strict input normalisation, char n-gram ML classification, and lower the policy block threshold."
