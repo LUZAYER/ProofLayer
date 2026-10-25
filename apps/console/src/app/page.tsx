@@ -53,8 +53,8 @@ export default function SecurityConsole() {
   const [evalLoading, setEvalLoading] = useState<boolean>(false);
   const [auditStatus, setAuditStatus] = useState<{ valid: boolean; total: number; message: string }>({
     valid: true,
-    total: 541,
-    message: "541 events cryptographically verified",
+    total: 0,
+    message: "Waiting for audit verification",
   });
   const [telemetryStats, setTelemetryStats] = useState<{
     total_scanned: number;
@@ -68,22 +68,16 @@ export default function SecurityConsole() {
     audit_chain_verified: boolean;
     audit_events_count: number;
   }>({
-    total_scanned: 541,
-    threats_blocked: 90,
-    safe_allowed: 445,
-    pending_approvals: 1,
-    p95_latency_ms: 3.11,
-    avg_latency_ms: 2.21,
-    top_vectors: [
-      { name: "Instruction Override", count: 24 },
-      { name: "Pii Harvesting Attempt", count: 18 },
-      { name: "Credential Extraction", count: 16 },
-      { name: "Bengali Prompt Injection", count: 14 },
-      { name: "Banglish Canary Exfiltration", count: 12 },
-    ],
-    language_distribution: { en: 382, bn: 95, "bn-Latn": 64 },
+    total_scanned: 0,
+    threats_blocked: 0,
+    safe_allowed: 0,
+    pending_approvals: 0,
+    p95_latency_ms: 0,
+    avg_latency_ms: 0,
+    top_vectors: [],
+    language_distribution: { en: 0, bn: 0, "bn-Latn": 0 },
     audit_chain_verified: true,
-    audit_events_count: 541,
+    audit_events_count: 0,
   });
 
   const [selectedEvent, setSelectedEvent] = useState<TelemetryEvent | null>(null);
@@ -95,7 +89,7 @@ export default function SecurityConsole() {
     critical_count: number;
     high_count: number;
     medium_count: number;
-  }>({ total: 90, critical_count: 67, high_count: 23, medium_count: 0 });
+  }>({ total: 0, critical_count: 0, high_count: 0, medium_count: 0 });
   const [selectedIncident, setSelectedIncident] = useState<any | null>(null);
   const [incidentSeverityFilter, setIncidentSeverityFilter] = useState<string>("ALL");
   const [incidentSearch, setIncidentSearch] = useState<string>("");
@@ -427,6 +421,38 @@ Generated: ${new Date().toISOString()}
       );
     }
   };
+
+  // Refresh real backend telemetry every five seconds.
+  useEffect(() => {
+    let active = true;
+
+    const refreshTelemetry = async () => {
+      try {
+        const response = await fetch(
+          `${GATEWAY_URL}/v1/telemetry/stats`,
+          { cache: "no-store" }
+        );
+        if (!response.ok) return;
+
+        const stats = await response.json();
+        if (active && stats?.status === "healthy") {
+          setTelemetryStats(stats);
+        }
+      } catch {
+        // Preserve the last successful values if the API is unavailable.
+      }
+    };
+
+    void refreshTelemetry();
+    const timer = window.setInterval(() => {
+      void refreshTelemetry();
+    }, 5000);
+
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
 
   // Connect SSE Telemetry Stream
   useEffect(() => {
@@ -1129,13 +1155,13 @@ Generated: ${new Date().toISOString()}
                       <div>
                         <div className="flex justify-between text-code-sm mb-1">
                           <span>English (`en`)</span>
-                          <span className="font-bold">{telemetryStats.language_distribution.en || 382}</span>
+                          <span className="font-bold">{telemetryStats.language_distribution.en ?? 0}</span>
                         </div>
                         <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
                           <div
                             className="h-full bg-blue-400 rounded-full"
                             style={{
-                              width: `${((telemetryStats.language_distribution.en || 382) / (telemetryStats.total_scanned || 1)) * 100}%`,
+                              width: `${((telemetryStats.language_distribution.en ?? 0) / (telemetryStats.total_scanned || 1)) * 100}%`,
                             }}
                           ></div>
                         </div>
@@ -1144,13 +1170,13 @@ Generated: ${new Date().toISOString()}
                       <div>
                         <div className="flex justify-between text-code-sm mb-1">
                           <span>Native Bengali (`bn`)</span>
-                          <span className="font-bold">{telemetryStats.language_distribution.bn || 95}</span>
+                          <span className="font-bold">{telemetryStats.language_distribution.bn ?? 0}</span>
                         </div>
                         <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
                           <div
                             className="h-full bg-emerald-400 rounded-full"
                             style={{
-                              width: `${((telemetryStats.language_distribution.bn || 95) / (telemetryStats.total_scanned || 1)) * 100}%`,
+                              width: `${((telemetryStats.language_distribution.bn ?? 0) / (telemetryStats.total_scanned || 1)) * 100}%`,
                             }}
                           ></div>
                         </div>
@@ -1160,14 +1186,14 @@ Generated: ${new Date().toISOString()}
                         <div className="flex justify-between text-code-sm mb-1">
                           <span>Romanized Banglish (`bn-Latn`)</span>
                           <span className="font-bold">
-                            {telemetryStats.language_distribution["bn-Latn"] || 64}
+                            {telemetryStats.language_distribution["bn-Latn"] ?? 0}
                           </span>
                         </div>
                         <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
                           <div
                             className="h-full bg-purple-400 rounded-full"
                             style={{
-                              width: `${((telemetryStats.language_distribution["bn-Latn"] || 64) / (telemetryStats.total_scanned || 1)) * 100}%`,
+                              width: `${((telemetryStats.language_distribution["bn-Latn"] ?? 0) / (telemetryStats.total_scanned || 1)) * 100}%`,
                             }}
                           ></div>
                         </div>
