@@ -27,6 +27,6 @@ RUN mkdir -p logs eval/out
 EXPOSE 8000
 
 HEALTHCHECK --interval=10s --timeout=3s --retries=3 \
-  CMD-SHELL curl -f http://localhost:${PORT:-8000}/healthz || exit 1
+  CMD ["sh", "-c", "curl -f http://localhost:${PORT:-8000}/healthz || exit 1"]
 
 CMD ["sh", "-c", "exec uvicorn services.gateway.app:app --host 0.0.0.0 --port ${PORT:-8000}"]

@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "historyId": "eef6225d-3ac7-4ca9-9544-e764b49e3f81",
+  "currentRevision": "bec6fad1-92a9-46b0-8e18-0db611f4b2e0",
+  "pendingChanges": false,
+  "files": {
+    "assets/sfx/click1.ogg": {
+      "hash": "59175ac17cd49a68dd736285738441287636112a84a6f7ce0d89921bda5a5360",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/59/59175ac17cd49a68dd736285738441287636112a84a6f7ce0d89921bda5a5360"
+    },
+    "assets/sfx/impactMetal_light_003.ogg": {
+      "hash": "92d5db6bfc672d9dc1b4f390b2900504f013187fa36335472554fafefa9050b1",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/92/92d5db6bfc672d9dc1b4f390b2900504f013187fa36335472554fafefa9050b1"
+    },
+    "assets/sfx/switch1.ogg": {
+      "hash": "efdd1d1e2904fb2d81259cd96bb80101caceae94be02baa4b5310714a6708b19",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/ef/efdd1d1e2904fb2d81259cd96bb80101caceae94be02baa4b5310714a6708b19"
+    },
+    "assets/sfx/switch3.ogg": {
+      "hash": "75d87dc60b7d29df838530af8c9e28205102234e07b5f1e849aa3d95c3922bd0",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/75/75d87dc60b7d29df838530af8c9e28205102234e07b5f1e849aa3d95c3922bd0"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "dec3bb8f046954b93660f64bc6561e3744b77b130cd4e066b304a196713afd59",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/de/dec3bb8f046954b93660f64bc6561e3744b77b130cd4e066b304a196713afd59"
+    },
+    "meta.json": {
+      "hash": "f74f4aea645ab4d16bf78f70a1ad51117e7823ce8f2b9d177c0075afd63e5e43",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/f7/f74f4aea645ab4d16bf78f70a1ad51117e7823ce8f2b9d177c0075afd63e5e43"
+    },
+    "package.json": {
+      "hash": "c91472e020b64e332093da816e064edbf1d30a5681c32ba0375bc5dd1c83db78",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/c9/c91472e020b64e332093da816e064edbf1d30a5681c32ba0375bc5dd1c83db78"
+    },
+    "assets/music/happy-beats-business-moves-vol-11-by-ende-dot-app.mp3": {
+      "hash": "364a546834db4c0c2e3b3240eb6df03e98b7362230154b04c5c614442f6660d7",
+      "content": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/36/364a546834db4c0c2e3b3240eb6df03e98b7362230154b04c5c614442f6660d7"
+    }
+  },
+  "revisions": {
+    "67c88a7f-f9e6-4d71-a256-3ac0c9d8fe20": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792955403403,
+      "endedAt": 1792955403404,
+      "files": {
+        "index.html": {
+          "before": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/e8/e8d2a49a42b336e5db8624510c6fe20d3e4dcf5ba39399f23e8c6dca1d130d52",
+          "after": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/7b/7b901e2286bbc82b0262f5a75f903b438c454ff17f0a3cbea1f7b293f86e2995"
+        }
+      }
+    },
+    "bec6fad1-92a9-46b0-8e18-0db611f4b2e0": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792955471005,
+      "endedAt": 1792955471006,
+      "files": {
+        "index.html": {
+          "before": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/7b/7b901e2286bbc82b0262f5a75f903b438c454ff17f0a3cbea1f7b293f86e2995",
+          "after": "/home/luzayer/.cache/hyperframes/history/eef6225d-3ac7-4ca9-9544-e764b49e3f81/blobs/de/dec3bb8f046954b93660f64bc6561e3744b77b130cd4e066b304a196713afd59"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "bec6fad1-92a9-46b0-8e18-0db611f4b2e0",
+      "id": "6bf1b04e-41c8-40f3-b929-1222646ba332"
+    },
+    "revisions": {
+      "67c88a7f-f9e6-4d71-a256-3ac0c9d8fe20": [
+        {
+          "id": "fbd502c1-2035-4dea-8c55-113fce284a50",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792955407574,
+          "contentHash": "25d9687ffa8e724bd4cbc5112938e8712474c212e177c49121893fbefca2b43d",
+          "revision": "67c88a7f-f9e6-4d71-a256-3ac0c9d8fe20",
+          "inputFingerprint": "ce84947310ba8cf92d6dadcbe1ee12aaf5709518f35c066a3652dc3e30091894",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "4742ab6e-4172-409d-a169-f9476af2dc9c"
+        }
+      ],
+      "bec6fad1-92a9-46b0-8e18-0db611f4b2e0": [
+        {
+          "id": "6bf1b04e-41c8-40f3-b929-1222646ba332",
+          "scope": "project",
+          "report": "/home/luzayer/AI/Cl/brag-output/composition/.hyperframes/artifacts/checks/6bf1b04e-41c8-40f3-b929-1222646ba332.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792955475203,
+          "contentHash": "60a9cd6a37c3771565b9b4963f81c6c8fb15f5c78454300c2cb1bccb3f3a2eba",
+          "revision": "bec6fad1-92a9-46b0-8e18-0db611f4b2e0",
+          "inputFingerprint": "e465f8d3de84bbbccaacc6dbdf8a4d03f4cbe013d9f302d79aa6117d71c0dd3d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "475900e0-ef02-4020-9659-ecde72236d60",
+        "scope": "project",
+        "report": "/home/luzayer/AI/Cl/brag-output/composition/.hyperframes/artifacts/checks/475900e0-ef02-4020-9659-ecde72236d60.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792955373805,
+        "contentHash": "7fb47ae7cf276e60cb67425f04eefdb33842fb9dc61fbf011ec48da05d8cb104",
+        "revision": null,
+        "inputFingerprint": "f90eb0ab61cf893cf52a059110644c2a40cb152674715c0b63d26dd34a3719b1",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "4742ab6e-4172-409d-a169-f9476af2dc9c",
+      "completedAt": 1792955522502,
+      "output": "/home/luzayer/AI/Cl/brag-output/brag.mp4",
+      "status": "completed",
+      "revision": "bec6fad1-92a9-46b0-8e18-0db611f4b2e0"
+    },
+    "retainedRevisions": [
+      "bec6fad1-92a9-46b0-8e18-0db611f4b2e0"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

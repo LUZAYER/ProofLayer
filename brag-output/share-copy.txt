@@ -1,0 +1,3 @@
+Your AI agents are moving fast, but can you prove they're safe?
+Introducing ProofLayer: sub-10ms policy enforcement, bilingual threat detection (Bengali & English), and Ed25519 cryptographic audit trails for high-stakes autonomous AI.
+If you can't prove it, don't deploy it.
