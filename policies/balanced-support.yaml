@@ -1,0 +1,32 @@
+version: "1.0.0"
+id: "balanced-support"
+name: "Balanced Customer Support Policy"
+description: "Standard support policy balancing security with customer agent autonomy."
+mode: "enforce"
+detector_thresholds:
+  block_score: 0.80
+  approval_score: 0.45
+tools:
+  lookup_account:
+    action: "allow"
+  issue_refund:
+    action: "allow"
+    max_amount_per_call: 100.0
+    approval_threshold_amount: 50.0
+  send_email:
+    action: "allow"
+    allowed_recipient_domains:
+      - "example.com"
+      - "customer.test"
+  fetch_document:
+    action: "allow"
+  summarize_ticket:
+    action: "allow"
+provenance_rules:
+  disallow_untrusted_tool_triggers: true
+  require_user_intent_match: true
+data_flow_rules:
+  - source_tag: "CANARY"
+    sink_tool: "send_email"
+    sink_field: "body"
+    action: "block"

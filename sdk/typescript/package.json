@@ -1,0 +1,12 @@
+{
+  "name": "@prooflayer/sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for ProofLayer Multilingual AI Agent Governance & Trust Gateway",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["ai", "security", "guardrails", "prompt-injection", "governance"],
+  "license": "Apache-2.0"
+}

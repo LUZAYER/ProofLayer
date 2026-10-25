@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "timestamp": 1792942969.8473554,
+    "smoke_mode": false,
+    "provenance_statement": "All benchmarks executed locally on synthetic datasets and a deterministic simulated model. No external cloud API keys or proprietary third-party metrics were fabricated."
+  },
+  "detector_benchmarks": {
+    "validation_metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "total_samples": 93
+    },
+    "per_language_f1": {
+      "en": 1.0,
+      "bn": 1.0,
+      "bn-Latn": 1.0
+    },
+    "adaptive_set_catch_rate": 0.9565,
+    "latency_ms": {
+      "p50": 2.59,
+      "p95": 4.52,
+      "p99": 5.26
+    }
+  },
+  "security_outcomes": {
+    "total_attacks_tested": 23,
+    "overall_asr_off": 0.3043,
+    "overall_asr_off_ci95": [
+      0.156,
+      0.5087
+    ],
+    "overall_asr_on": 0.0,
+    "overall_asr_on_ci95": [
+      0.0,
+      0.1431
+    ],
+    "overall_asr_reduction_pct": 100.0,
+    "false_positive_rate": 0.1806,
+    "per_language_asr": {
+      "en": {
+        "total": 11,
+        "asr_off": {
+          "rate": 0.0909,
+          "ci_lower": 0.0162,
+          "ci_upper": 0.3774,
+          "successes": 1,
+          "total": 11
+        },
+        "asr_on": {
+          "rate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.2588,
+          "successes": 0,
+          "total": 11
+        },
+        "reduction_pct": 100.0
+      },
+      "bn": {
+        "total": 6,
+        "asr_off": {
+          "rate": 0.5,
+          "ci_lower": 0.1876,
+          "ci_upper": 0.8124,
+          "successes": 3,
+          "total": 6
+        },
+        "asr_on": {
+          "rate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.3903,
+          "successes": 0,
+          "total": 6
+        },
+        "reduction_pct": 100.0
+      },
+      "bn-Latn": {
+        "total": 6,
+        "asr_off": {
+          "rate": 0.5,
+          "ci_lower": 0.1876,
+          "ci_upper": 0.8124,
+          "successes": 3,
+          "total": 6
+        },
+        "asr_on": {
+          "rate": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.3903,
+          "successes": 0,
+          "total": 6
+        },
+        "reduction_pct": 100.0
+      }
+    },
+    "per_category_metrics": [
+      {
+        "category": "DIRECT_PROMPT_INJECTION",
+        "name": "Direct Prompt Injection / Instruction Override",
+        "owasp_mapping": "LLM01:2025-Prompt-Injection",
+        "total": 23,
+        "asr_off": 0.3043,
+        "asr_off_ci95": [
+          0.156,
+          0.5087
+        ],
+        "asr_on": 0.0,
+        "asr_on_ci95": [
+          0.0,
+          0.1431
+        ],
+        "reduction_pct": 100.0,
+        "remediation": "Enforce strict input normalisation, char n-gram ML classification, and lower the policy block threshold."
+      }
+    ]
+  },
+  "known_limitations": [
+    "Evaluated on synthetic banking support queries and deterministic simulated LLM.",
+    "Novel zero-day injection obfuscations not in dataset may achieve temporary evasion.",
+    "Bangla complex conjunct normalisation requires ongoing expansion of colloquial slang lexicons.",
+    "Indicative framework mappings are for guidance and do not constitute legal compliance certification."
+  ]
+}

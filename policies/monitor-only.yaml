@@ -1,0 +1,23 @@
+version: "1.0.0"
+id: "monitor-only"
+name: "Passive Observability & Monitor Policy"
+description: "Logs all potential violations and audit events without blocking traffic."
+mode: "monitor"
+detector_thresholds:
+  block_score: 0.95
+  approval_score: 0.80
+tools:
+  lookup_account:
+    action: "allow"
+  issue_refund:
+    action: "allow"
+  send_email:
+    action: "allow"
+  fetch_document:
+    action: "allow"
+  summarize_ticket:
+    action: "allow"
+provenance_rules:
+  disallow_untrusted_tool_triggers: false
+  require_user_intent_match: false
+data_flow_rules: []

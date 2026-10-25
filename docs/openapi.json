@@ -1,0 +1,415 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ProofLayer Gateway & Trust Layer API",
+    "version": "1.0.0",
+    "description": "Production-grade security, governance, and trust layer for AI agents. Multilingual-first (English, Bangla, Banglish)."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Local development gateway"
+    }
+  ],
+  "paths": {
+    "/healthz": {
+      "get": {
+        "summary": "Liveness probe",
+        "responses": {
+          "200": {
+            "description": "Service is live",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "status": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/readyz": {
+      "get": {
+        "summary": "Readiness probe",
+        "responses": {
+          "200": {
+            "description": "Service is ready",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string" },
+                    "detectors_loaded": { "type": "boolean" },
+                    "audit_ledger_ready": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chat/completions": {
+      "post": {
+        "summary": "OpenAI-compatible chat completion proxy with inline Shield inspection",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["messages"],
+                "properties": {
+                  "model": { "type": "string" },
+                  "messages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["role", "content"],
+                      "properties": {
+                        "role": { "type": "string" },
+                        "content": { "type": "string" },
+                        "provenance": {
+                          "type": "string",
+                          "enum": ["SYSTEM", "USER", "TOOL_OUTPUT", "RETRIEVED_DOC", "WEB"]
+                        }
+                      }
+                    }
+                  },
+                  "tools": { "type": "array", "items": { "type": "object" } },
+                  "temperature": { "type": "number" },
+                  "stream": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Chat completion response or Shield block response"
+          }
+        }
+      }
+    },
+    "/v1/shield/scan": {
+      "post": {
+        "summary": "Scan text segments for injection, PII, and policy violations",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["segments"],
+                "properties": {
+                  "segments": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["text", "provenance"],
+                      "properties": {
+                        "text": { "type": "string" },
+                        "provenance": {
+                          "type": "string",
+                          "enum": ["SYSTEM", "USER", "TOOL_OUTPUT", "RETRIEVED_DOC", "WEB"]
+                        },
+                        "language_hint": { "type": "string" }
+                      }
+                    }
+                  },
+                  "policy_id": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Scan analysis, risk scores, and decision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["decision", "risk_score", "categories", "explanation", "latency_ms"],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": ["ALLOW", "ALLOW_WITH_REDACTION", "REQUIRE_APPROVAL", "BLOCK"]
+                    },
+                    "risk_score": { "type": "number" },
+                    "categories": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "evidence_spans": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "start": { "type": "integer" },
+                          "end": { "type": "integer" },
+                          "text": { "type": "string" },
+                          "category": { "type": "string" },
+                          "rule_id": { "type": "string" }
+                        }
+                      }
+                    },
+                    "explanation": {
+                      "type": "object",
+                      "properties": {
+                        "en": { "type": "string" },
+                        "bn": { "type": "string" }
+                      }
+                    },
+                    "latency_ms": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tools/authorize": {
+      "post": {
+        "summary": "Authorize a proposed tool invocation against policies",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["agent_id", "tool_name", "arguments"],
+                "properties": {
+                  "agent_id": { "type": "string" },
+                  "tool_name": { "type": "string" },
+                  "arguments": { "type": "object" },
+                  "context": { "type": "object" },
+                  "policy_id": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tool authorization result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["decision", "reasons"],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL"]
+                    },
+                    "reasons": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "requires_approval": { "type": "boolean" },
+                    "approval_id": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/output/scan": {
+      "post": {
+        "summary": "Scan model output for secret or PII leakage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["text"],
+                "properties": {
+                  "text": { "type": "string" },
+                  "redact": { "type": "boolean", "default": true }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Scan findings and sanitized text",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["findings", "sanitized_text"],
+                  "properties": {
+                    "findings": { "type": "array", "items": { "type": "object" } },
+                    "sanitized_text": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/approvals": {
+      "get": {
+        "summary": "List pending approval requests",
+        "parameters": [
+          { "name": "status", "in": "query", "schema": { "type": "string", "default": "pending" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of approvals"
+          }
+        }
+      }
+    },
+    "/v1/approvals/{id}/decision": {
+      "post": {
+        "summary": "Submit an approval or denial decision",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["decision"],
+                "properties": {
+                  "decision": { "type": "string", "enum": ["approve", "deny"] },
+                  "note": { "type": "string" },
+                  "decided_by": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Approval updated" }
+        }
+      }
+    },
+    "/v1/audit/events": {
+      "get": {
+        "summary": "Query tamper-evident audit ledger events",
+        "parameters": [
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 50 } },
+          { "name": "offset", "in": "query", "schema": { "type": "integer", "default": 0 } }
+        ],
+        "responses": {
+          "200": { "description": "Audit event log" }
+        }
+      }
+    },
+    "/v1/audit/verify": {
+      "get": {
+        "summary": "Verify the hash-chain integrity and Ed25519 signatures",
+        "responses": {
+          "200": {
+            "description": "Verification result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["valid", "checked_count"],
+                  "properties": {
+                    "valid": { "type": "boolean" },
+                    "checked_count": { "type": "integer" },
+                    "first_broken_index": { "type": "integer", "nullable": true },
+                    "reason": { "type": "string", "nullable": true }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/audit/pubkey": {
+      "get": {
+        "summary": "Fetch public key used for Ed25519 audit signatures",
+        "responses": {
+          "200": {
+            "description": "Public key in hex/PEM format"
+          }
+        }
+      }
+    },
+    "/v1/audit/tamper-demo": {
+      "post": {
+        "summary": "Demonstration endpoint to test tampering detection",
+        "responses": {
+          "200": { "description": "Tamper test outcome" }
+        }
+      }
+    },
+    "/v1/policies/{id}": {
+      "get": { "summary": "Get policy by ID" },
+      "put": { "summary": "Update or create policy" }
+    },
+    "/v1/policies/simulate": {
+      "post": {
+        "summary": "Dry-run policy evaluation on historical or synthetic events",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["policy_yaml"],
+                "properties": {
+                  "policy_yaml": { "type": "string" },
+                  "test_events": { "type": "array", "items": { "type": "object" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Simulation diff & decisions" }
+        }
+      }
+    },
+    "/v1/redteam/runs": {
+      "post": {
+        "summary": "Trigger automated red team attack evaluation",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["target_url", "authorized"],
+                "properties": {
+                  "target_url": { "type": "string" },
+                  "authorized": { "type": "boolean" },
+                  "languages": { "type": "array", "items": { "type": "string" } },
+                  "categories": { "type": "array", "items": { "type": "string" } },
+                  "shield_mode": { "type": "string", "enum": ["off", "on", "both"] },
+                  "seed": { "type": "integer" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Run created" }
+        }
+      }
+    },
+    "/v1/redteam/runs/{id}": {
+      "get": {
+        "summary": "Fetch status and results of a red team run"
+      }
+    }
+  }
+}

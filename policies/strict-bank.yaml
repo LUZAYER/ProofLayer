@@ -1,0 +1,43 @@
+version: "1.0.0"
+id: "strict-bank"
+name: "Padma Bank Strict Governance Policy"
+description: "Zero-trust banking policy with spend thresholds and strict data-flow taint analysis."
+mode: "enforce"
+detector_thresholds:
+  block_score: 0.70
+  approval_score: 0.35
+tools:
+  lookup_account:
+    action: "allow"
+    forbid_sensitive_data_in_arguments: false
+  issue_refund:
+    action: "allow"
+    max_amount_per_call: 50.0
+    max_amount_per_session: 150.0
+    approval_threshold_amount: 25.0
+    forbid_sensitive_data_in_arguments: true
+  send_email:
+    action: "allow"
+    allowed_recipient_domains:
+      - "padmabank.test"
+      - "customer.test"
+      - "padmatestbank.com"
+    forbid_sensitive_data_in_arguments: true
+  fetch_document:
+    action: "allow"
+    forbid_sensitive_data_in_arguments: true
+  summarize_ticket:
+    action: "allow"
+    forbid_sensitive_data_in_arguments: true
+provenance_rules:
+  disallow_untrusted_tool_triggers: true
+  require_user_intent_match: true
+data_flow_rules:
+  - source_tag: "CANARY"
+    sink_tool: "send_email"
+    sink_field: "body"
+    action: "block"
+  - source_tag: "SENSITIVE_ACCOUNT"
+    sink_tool: "send_email"
+    sink_field: "body"
+    action: "block"

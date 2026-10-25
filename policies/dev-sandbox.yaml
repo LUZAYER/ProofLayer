@@ -1,0 +1,24 @@
+version: "1.0.0"
+id: "dev-sandbox"
+name: "Developer Test Sandbox Policy"
+description: "Shadow mode policy for testing agent integrations and tool pipelines."
+mode: "shadow"
+detector_thresholds:
+  block_score: 0.70
+  approval_score: 0.40
+tools:
+  lookup_account:
+    action: "allow"
+  issue_refund:
+    action: "allow"
+    max_amount_per_call: 25.0
+  send_email:
+    action: "allow"
+  fetch_document:
+    action: "allow"
+  summarize_ticket:
+    action: "allow"
+provenance_rules:
+  disallow_untrusted_tool_triggers: true
+  require_user_intent_match: true
+data_flow_rules: []

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prooflayer-gateway
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PROOF_LAYER_PORT=8000
+      - PROOF_LAYER_POLICY_PATH=policies/strict-bank.yaml
+      - PROOF_LAYER_LEDGER_PATH=logs/audit.jsonl
+      - PROOF_LAYER_KEY_PATH=logs/ed25519_key.pem
+      - PROOF_LAYER_AUTH_ENABLED=false
+    volumes:
+      - prooflayer_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  console:
+    build:
+      context: .
+      dockerfile: Dockerfile.console
+    container_name: prooflayer-console
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_GATEWAY_URL=http://localhost:8000
+    depends_on:
+      gateway:
+        condition: service_healthy
+
+volumes:
+  prooflayer_logs:
