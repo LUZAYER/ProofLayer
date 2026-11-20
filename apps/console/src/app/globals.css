@@ -2,22 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Theme 2: Quantum Light / Executive Ivory (Light Mode) */
+  --color-surface: 255 255 255;
+  --color-surface-dim: 243 246 250;
+  --color-surface-bright: 255 255 255;
+  --color-surface-container-lowest: 248 250 252;
+  --color-surface-container-low: 255 255 255;
+  --color-surface-container: 241 245 249;
+  --color-surface-container-high: 226 232 240;
+  --color-surface-container-highest: 203 213 225;
+  --color-on-surface: 15 23 42;
+  --color-on-surface-variant: 51 65 85;
+  --color-inverse-surface: 15 23 42;
+  --color-inverse-on-surface: 248 250 252;
+  --color-outline: 100 116 139;
+  --color-outline-variant: 203 213 225;
+  --color-surface-tint: 13 148 136;
+  --color-primary: 13 148 136;
+  --color-on-primary: 255 255 255;
+  --color-primary-container: 204 251 241;
+  --color-on-primary-container: 17 94 89;
+  --color-inverse-primary: 94 234 212;
+  --color-secondary: 2 132 199;
+  --color-on-secondary: 255 255 255;
+  --color-secondary-container: 224 242 254;
+  --color-on-secondary-container: 3 105 161;
+  --color-tertiary: 16 185 129;
+  --color-on-tertiary: 255 255 255;
+  --color-tertiary-container: 209 250 229;
+  --color-on-tertiary-container: 6 95 70;
+  --color-error: 225 29 72;
+  --color-on-error: 255 255 255;
+  --color-error-container: 255 228 230;
+  --color-on-error-container: 159 18 57;
+  --color-primary-fixed: 204 251 241;
+  --color-primary-fixed-dim: 153 246 228;
+  --color-background: 248 250 252;
+  --color-on-background: 15 23 42;
+  --color-surface-variant: 226 232 240;
+}
+
+.dark {
+  /* Theme 1: Cyber Obsidian (Dark Mode) */
+  --color-surface: 14 19 35;
+  --color-surface-dim: 14 19 35;
+  --color-surface-bright: 52 57 74;
+  --color-surface-container-lowest: 8 13 29;
+  --color-surface-container-low: 22 27 43;
+  --color-surface-container: 26 31 48;
+  --color-surface-container-high: 37 41 58;
+  --color-surface-container-highest: 47 52 70;
+  --color-on-surface: 222 225 249;
+  --color-on-surface-variant: 186 202 197;
+  --color-inverse-surface: 222 225 249;
+  --color-inverse-on-surface: 43 48 65;
+  --color-outline: 133 148 144;
+  --color-outline-variant: 60 74 70;
+  --color-surface-tint: 60 221 199;
+  --color-primary: 87 241 219;
+  --color-on-primary: 0 55 49;
+  --color-primary-container: 45 212 191;
+  --color-on-primary-container: 0 87 77;
+  --color-inverse-primary: 0 107 95;
+  --color-secondary: 173 198 255;
+  --color-on-secondary: 0 46 106;
+  --color-secondary-container: 5 102 217;
+  --color-on-secondary-container: 230 236 255;
+  --color-tertiary: 102 243 182;
+  --color-on-tertiary: 0 56 36;
+  --color-tertiary-container: 68 214 155;
+  --color-on-tertiary-container: 0 89 59;
+  --color-error: 255 180 171;
+  --color-on-error: 105 0 5;
+  --color-error-container: 147 0 10;
+  --color-on-error-container: 255 218 214;
+  --color-primary-fixed: 98 250 227;
+  --color-primary-fixed-dim: 60 221 199;
+  --color-background: 14 19 35;
+  --color-on-background: 222 225 249;
+  --color-surface-variant: 47 52 70;
+}
+
 @layer base {
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #0e1323;
-    color: #dee1f9;
+    background-color: rgb(var(--color-surface-container-lowest));
+    color: rgb(var(--color-on-surface));
   }
   body {
     overscroll-behavior: none;
   }
-  main > :first-child {
-    margin-top: 0 !important;
-  }
-  main > :last-child {
-    margin-bottom: 0 !important;
-  }
+}
+
+/* Extraordinary Theme Transition Class */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              fill 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Material Symbols Outlined Icon Font Defaults */
@@ -41,36 +130,63 @@
 
 /* Custom sleek scrollbar for tables & panels */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e1323;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #25293a;
+  background: rgb(var(--color-outline-variant) / 0.5);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34394a;
+  background: rgb(var(--color-outline));
 }
 
-/* Pulsing beacon animations */
+/* Glowing Beacon animations */
 @keyframes signal-ping {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.6);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(45, 212, 191, 0);
+    box-shadow: 0 0 0 8px rgba(13, 148, 136, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
   }
 }
 
 .beacon-pulse {
   animation: signal-ping 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Floating animation for hero graphics */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 5s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Grid background pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgb(var(--color-outline-variant) / 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgb(var(--color-outline-variant) / 0.1) 1px, transparent 1px);
 }

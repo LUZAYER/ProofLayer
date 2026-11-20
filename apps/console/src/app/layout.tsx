@@ -7,6 +7,11 @@ export const metadata: Metadata = {
     "Runtime security, tool policy enforcement, cryptographic audit log, and automated red team engine for autonomous AI agents.",
   keywords: ["AI Security", "Prompt Injection", "Agent Governance", "Bangla AI", "Ed25519 Audit Log"],
   authors: [{ name: "ProofLayer Team" }],
+  icons: {
+    icon: "/prooflayer-logo.svg",
+    shortcut: "/prooflayer-logo.svg",
+    apple: "/prooflayer-logo.svg",
+  },
 };
 
 export const viewport: Viewport = {
@@ -22,6 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" type="image/svg+xml" href="/prooflayer-logo.svg" />
+        <link rel="shortcut icon" href="/prooflayer-logo.svg" />
+        <link rel="apple-touch-icon" href="/prooflayer-logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
